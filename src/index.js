@@ -9,8 +9,8 @@ const app = express();
 const port = 8080;
 
 const customers = require('./routes/customers');
-// const experiences = require('./routes/experiences');
-// const skills = require('./routes/skills');
+const complaints = require('./routes/complaints');
+const plumbers = require('./routes/plumbers');
 // const documents = require('./routes/documents');
 
 mongoose.Promise = global.Promise;
@@ -27,8 +27,8 @@ app.use(bodyParser.urlencoded({
 
 // Routes 
 app.use('/customers', customers);
-// app.use('/experiences', experiences);
-// app.use('/skills', skills);
+app.use('/complaints', complaints);
+app.use('/plumbers', plumbers);
 // app.use('/documents', documents);
 
 app.use((req, res, next) => {

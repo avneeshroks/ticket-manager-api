@@ -1,8 +1,8 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var CustomerModelSchema = new Schema({
+const CustomerModelSchema = new Schema({
     rtn : String,
     email : String,
     salutation : String,
@@ -28,6 +28,6 @@ var CustomerModelSchema = new Schema({
     }
 });
 
-let Customer = mongoose.model('Customer', CustomerModelSchema );
+const Customer = mongoose.model('Customer', CustomerModelSchema );
 
 module.exports = Customer;

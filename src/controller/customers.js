@@ -36,7 +36,7 @@ module.exports = {
             if (!customer) {
                 let error = new Error('Not Found');
                 error.status = 201;
-                error.message = "User does not exist, please try another!";
+                error.message = "Customer does not exist, please try another!";
                 next(error);
             }
 
@@ -64,7 +64,7 @@ module.exports = {
 
             let error = new Error('Not Found');
             error.status = err.status;
-            error.message = "Something went wrong while updating user, please try again later!";
+            error.message = "Something went wrong while updating customer, please try again later!";
             next(error);
         }
     },
