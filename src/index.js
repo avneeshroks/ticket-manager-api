@@ -2,14 +2,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+require('dotenv').config();
 
-const url = process.env.MONGO_URL;
+const url = process.env.MONGO_URL; 
 const app = express();
 const port = 8080;
 
-// const users = require('./routes/users');
-// const experiences = require('./routes/experiences');
-// const skills = require('./routes/skills');
+const customers = require('./routes/customers');
+const complaints = require('./routes/complaints');
+const plumbers = require('./routes/plumbers');
 // const documents = require('./routes/documents');
 
 mongoose.Promise = global.Promise;
@@ -25,9 +26,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Routes 
-// app.use('/users', users);
-// app.use('/experiences', experiences);
-// app.use('/skills', skills);
+app.use('/customers', customers);
+app.use('/complaints', complaints);
+app.use('/plumbers', plumbers);
 // app.use('/documents', documents);
 
 app.use((req, res, next) => {
