@@ -2,12 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+require('dotenv').config();
 
-const url = process.env.MONGO_URL;
+const url = process.env.MONGO_URL; 
 const app = express();
 const port = 8080;
 
-// const users = require('./routes/users');
+const customers = require('./routes/customers');
 // const experiences = require('./routes/experiences');
 // const skills = require('./routes/skills');
 // const documents = require('./routes/documents');
@@ -25,7 +26,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Routes 
-// app.use('/users', users);
+app.use('/customers', customers);
 // app.use('/experiences', experiences);
 // app.use('/skills', skills);
 // app.use('/documents', documents);
